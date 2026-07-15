@@ -15,7 +15,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t food-app .'
+                sh 'docker build -t varshpawar/food-app:latest .'
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                sh 'docker push varshpawar/food-app:latest'
             }
         }
 
